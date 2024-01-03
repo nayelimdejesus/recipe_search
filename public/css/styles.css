@@ -4,6 +4,13 @@ body{
     font-family: Palatino, URW Palladio L, serif;
 }
 h1{
+    padding: 1%;
     font-weight: bold;
+    color: black;
+    text-align: center;
+}
+#navBar{
+    background-color: black;
+    padding: 1%;
 
 }
