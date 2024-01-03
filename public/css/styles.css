@@ -1,16 +1,24 @@
 body{
-    background-color: rgb(230, 230, 234);
-    color: black;
+    background-color: rgb(14, 12, 12);
+    background-image: url(/img/full_meal.png);
+    background-repeat: no-repeat;
+    background-size: 90% 70%;
+    background-position: center;
+    color: white;
     font-family: Palatino, URW Palladio L, serif;
+    text-align: center;
 }
 h1{
     padding: 1%;
     font-weight: bold;
-    color: black;
+    color: white;
     text-align: center;
 }
 #navBar{
     background-color: black;
     padding: 1%;
 
+}
+.wrap{
+    text-align: center;
 }
