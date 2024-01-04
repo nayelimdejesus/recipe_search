@@ -1,23 +1,65 @@
 body{
-    background-color: rgb(14, 12, 12);
+    /* background-color: rgb(14, 12, 12);
     background-image: url(/img/full_meal.png);
     background-repeat: no-repeat;
-    background-size: 90% 80%;
-    background-position: center;
+    background-size: 70% 60%;
+    background-position: center; */
+    background-color: #292929;
     color: white;
     font-family: Palatino, URW Palladio L, serif;
-    text-align: center;
+    /* text-align: center; */
     
 }
-h1{
+.mainImg{
+    border-radius: 10px;
+}
+#mainButtons{
     padding: 1%;
+}
+h1{
     font-weight: bold;
+    padding-left: 1%;
+}
+.lead{
+    padding-left: 1%;
 }
 #navBar{
     background-color: black;
     padding: 1%;
 
 }
-.wrap{
-    margin-top: 8%;
+
+/* Category Card */
+.category__link{
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    transition: 250ms all;
 }
+
+.category__link:hover {
+    transform: scale(1.1);
+  }
+  
+.category__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+    overflow: hidden;
+    border-radius: 8px;
+}
+.category__img--Large{
+    
+}
+  
+.category__img--large {
+    height: 330px;
+  }
+  
+.category__img img {
+    width: 100%;
+    object-fit: cover;
+  }
