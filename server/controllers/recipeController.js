@@ -17,6 +17,20 @@ exports.homepage = async(req, res) =>{
     }
 }
 
+/**
+ * Get /categories
+ * Categories
+ */
+
+exports.exploreCategories = async(req, res) =>{
+    try{
+        const limitNumber = 20;
+        const categories = await Category.find({}).limit(limitNumber);
+        res.render('categories', {title: 'Food Recipe - Categories', categories})
+    }catch(error){
+    res.status(500).send({message: error.message || "Error Occurred"});
+    }
+}
 
 
 // async function insertDymmyCategoryData(){
