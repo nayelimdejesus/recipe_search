@@ -8,7 +8,14 @@ exports.homepage = async(req, res) =>{
         const limitNumber = 5;
         const categories = await Category.find({}).limit(limitNumber);
         const latest = await Recipe.find({}).sort({_id: -1}).limit(limitNumber);
-        const food = {latest};
+
+        //grabs recipes of each section
+        const thai = await Recipe.find({'category': 'Thai'}).limit(limitNumber);
+        const american= await Recipe.find({'category': 'American'}).limit(limitNumber);
+        const mexican = await Recipe.find({'category': 'Mexican'}).limit(limitNumber);
+        const chinese = await Recipe.find({'category': 'Chinese'}).limit(limitNumber);
+
+        const food = {latest, thai, american, mexican, chinese};
 
         res.render('index', {title: 'Food Recipe-Home', categories, food});
     }catch(error){
