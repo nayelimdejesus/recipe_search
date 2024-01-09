@@ -35,13 +35,13 @@ exports.exploreCategories = async(req, res) =>{
     }
 }
 
-//Categories
+//Categories by Id
 exports.exploreCategoriesById = async(req, res) =>{
     try{
         let categoryId = req.params.id;
         const limitNumber = 20;
-        const categoryById = await Category.find({'category': categoryId}).limit(limitNumber);
-        res.render('categories', { title: 'Food Recipe - Categories', categoryId});
+        const categoryById = await Recipe.find({'category': categoryId}).limit(limitNumber);
+        res.render('categories', { title: 'Food Recipe - Categories', categoryById});
     }catch(error){
     res.status(500).send({message: error.message || "Error Occurred"});
     }
@@ -64,7 +64,7 @@ exports.exploreRecipe = async(req, res) =>{
         const recipe = await Recipe.findById(recipeId);
 
 
-        res.render('categories', {title: 'Food Recipe - Categories', categories})
+        res.render('recipe', {title: 'Food - Recipe', recipe});
     }catch(error){
     res.status(500).send({message: error.message || "Error Occurred"});
     }
@@ -73,3 +73,28 @@ exports.exploreRecipe = async(req, res) =>{
 // insertDymmyCategoryData();
 
 
+//search
+
+exports.searchRecipe = async(req, res) =>{
+    try{
+        let searchTerm = req.body.searchTerm;
+        let recipe = await Recipe.find({$text: {$search: searchTerm, $diacriticSensitive: true}});
+        res.render('search', {title: 'Food Recipe - Search', recipe});
+
+    }catch(error){
+        res.status(500).send({message: error.message || "Error Occurred"});
+    }
+}
+
+
+
+exports.exploreLatest = async(req, res) =>{
+    try{
+        const limitNumber = 20;
+        const recipe = await Recipe.find({}).sort({_id: -1}).limit(limitNumber);
+        res.render('explore-latest', {title: 'Food Recipe - Explore Latest', recipe});
+
+    }catch(error){
+        res.status(500).send({message: error.message || "Error Occurred"});
+    }
+}
