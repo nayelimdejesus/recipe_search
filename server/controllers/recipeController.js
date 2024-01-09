@@ -3,6 +3,7 @@ const Category = require('../models/Category');
 const Recipe = require('../models/Recipe');
 
 //Homepage
+
 exports.homepage = async(req, res) =>{
     try{
         const limitNumber = 5;
@@ -28,19 +29,47 @@ exports.exploreCategories = async(req, res) =>{
     try{
         const limitNumber = 20;
         const categories = await Category.find({}).limit(limitNumber);
-        res.render('categories', {title: 'Food Recipe - Categories', categories})
+        res.render('categories', { title: 'Food Recipe - Categories', categories});
+    }catch(error){
+    res.status(500).send({message: error.message || "Error Occurred"});
+    }
+}
+
+//Categories
+exports.exploreCategoriesById = async(req, res) =>{
+    try{
+        let categoryId = req.params.id;
+        const limitNumber = 20;
+        const categoryById = await Category.find({'category': categoryId}).limit(limitNumber);
+        res.render('categories', { title: 'Food Recipe - Categories', categoryId});
     }catch(error){
     res.status(500).send({message: error.message || "Error Occurred"});
     }
 }
 
 
-async function insertDymmyRecipeData(){
+
+
+
+
+
+
+
+
+// Get Recipes
+exports.exploreRecipe = async(req, res) =>{
     try{
-        await Category.insertMany();
-    } catch(error){
-        console.log('err', + error);
+        let recipeId = req.params.id;
+
+        const recipe = await Recipe.findById(recipeId);
+
+
+        res.render('categories', {title: 'Food Recipe - Categories', categories})
+    }catch(error){
+    res.status(500).send({message: error.message || "Error Occurred"});
     }
 }
 
-insertDymmyRecipeData();
+// insertDymmyCategoryData();
+
+

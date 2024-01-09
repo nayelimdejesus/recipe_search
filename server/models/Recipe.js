@@ -8,24 +8,20 @@ const recipeSchema = new mongoose.Schema({
         type: String,
         required: 'This field is required.'
     },
-    email: {
-        type: String,
-        required: 'This field is required.'
-    },
     ingredients: {
         type: Array,
         required: 'This field is required.'
     },
     category: {
         type: String,
-        enum: ['Thai', 'American', 'Chinese', 'Mexican', 'Indian'],
+        enum: ['Thai', 'American', 'Mexican', 'Chinese', 'Indian'],
         required: 'This field is required.'
     },
     image: {
         type: String,
         required: 'This field is required.'
-    }
+    },
 
 });
 
-module.exports = mongoose.model('Category', categorySchema);
+module.exports = mongoose.model('Recipe', recipeSchema);
