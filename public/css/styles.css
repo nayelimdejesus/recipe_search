@@ -1,19 +1,9 @@
-:root {
-    --bs-font-sans-serif: 'Rubik', sans-serif;
-  }
-.container-xxl { max-width: 1530px; }
 body{
-    /* background-color: rgb(14, 12, 12);
-    background-image: url(/img/full_meal.png);
-    background-repeat: no-repeat;
-    background-size: 70% 60%;
-    background-position: center; */
     background-color: #292929;
     color: white;
     font-family: Palatino, URW Palladio L, serif;
-    /* text-align: center; */
-    
 }
+
 .list-group-item{
     color: black;
 }
