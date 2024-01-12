@@ -3,16 +3,15 @@ body{
     color: white;
     font-family: Palatino, URW Palladio L, serif;
 }
-
-.list-group-item{
-    color: black;
+a{
+    color: white;
 }
 .mainImg{
     border-radius: 10px;
 }
-#mainButtons{
+/* #mainButtons{
     padding: 1%;
-}
+} */
 h1{
     font-weight: bold;
     padding-left: 1%;
@@ -24,14 +23,14 @@ h1{
     background-color: black;
     padding: 1%;
 }
-a { color: var(--bs-dark); }
+
 
 /* Category Card */
 .category__link{
     text-align: center;
     display: block;
     text-decoration: none;
-    transition: 250ms all;
+    transition: 250ms all; 
 }
 
 .category__link:hover {

@@ -3,54 +3,53 @@
 
 <div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
     <div class="col-12 col-lg-6">
-      <img class = "mainImg" src="/img/full_meal.png" width="550" height="300" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Cooking With Node.js">
+        <img class="mainImg" src="/img/full_meal.png" width="550" height="300" class="d-block mx-lg-auto img-fluid" loading="lazy" alt="Cooking With Node.js">
     </div>
-  
+
     <div class="col-12 col-lg-6">
-      <h1 class="display-5 fw-bold mb-3">Explore Recipes</h1>
-      <p class="lead">
-        Explore our huge selection of recipe ideas including; desserts, vegan and vegetarian dinner ideas, pasta recipes, and gluten-free recipes.
-      </p>
-  
-      <div id = "mainButtons" class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest</a>
-        <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Show Random</a>
-      </div>
-  
+        <h1 class="display-5 fw-bold mb-3">Explore Recipes</h1>
+        <p class="lead"> Explore our huge selection of recipe ideas including; desserts, vegan and vegetarian dinner ideas, pasta recipes, and gluten-free recipes. </p>
+        <div id="mainButtons" class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Explore Latest</a>
+            <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Show Random</a>
+        </div>
     </div>
-  
-  </div>
-  
-<!-- Categories -->
-<div class = "row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
-    
-    <% if(categories != ''){ %>
+
+</div>
+
+<!-- Categories of Different Types of Food -->
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+    <% if(categories !='' ){ %>
         <% categories.forEach(function(category, index) { %>
             <a href="/categories/<%- category.name %>" class="col text-center category__link">
-                <div class = "category__img shadow">
+                <div class="category__img shadow">
                     <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
                 </div>
                 <div class="pt-1"><%- category.name %></div>
             </a>
-        <% }) %>
-    <% } %>
+         <% }) %>
+         <% } %>
 
-<a href = "/categories" class = "col text-center category__link">
-    <div class = "category__img shadow">
-        <img src = "img/view-all.jpg" alt = "View All Categories" loading = "lazy">
-    </div>
-    <div class = "pt-1">View All</div>
-</a>
-
+        <a href="/categories" class="col text-center category__link">
+             <div class="category__img shadow">
+                <img src="img/view-all.jpg" alt="View All Categories" loading="lazy">
+            </div>
+            <div class="pt-1">View All</div>
+        </a>
+</div>
 
 <!-- Submit -->
-<section class = "px-4 py-5 my-5 text-center">
-    <img src = "/img/publish-recipe.png" class = "d-block mx-auto mb-4 img-fluid" alt = "Publish your recipe for FREE today" width = "566" height = "288" loading = "lazy">
-    <h1 class = "display-5 fw-bold">Publish your recipes for FREE today</h1>
-    <div class = "col-lg-6 mx-auto">
-        <p class = "lead mb-4"> Publish your Recipe in front of thousands of people for free.</p> 
-        <div class = "d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <a href = "/submit-recipe" class = "btn btn-primary btn-dark btn-lg">Submit Recipe</a>
+<section class="pb-4 pt-4">
+    <img src="/img/publish-recipe.png" class="d-block mx-auto mb-4 img-fluid" alt="Publish your recipe for FREE today" width="566" height="288" loading="lazy">
+    <div class="col-lg-6 mx-auto text-center">
+        <h1 class="display-5 fw-bold">Publish your recipes for FREE today</h1>
+        <p class="lead mb-4"> Publish your Recipe in front of thousands of people for free.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/submit-recipe" class="btn btn-primary btn-dark btn-lg">Submit Recipe</a>
         </div>
     </div>
 </section>
+
+
+
+<!-- <div class = "row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4"></div> -->
