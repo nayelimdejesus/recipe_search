@@ -106,9 +106,14 @@ exports.exploreRandom = async(req, res) =>{
         let count = await Recipe.find().countDocuments();
         let random = Math.floor(Math.random() * count);
         let recipe = await Recipe.findOne().skip(random).exec();
-        
+
         res.render('explore-random', {title: 'Food Recipe - Explore Random Recipe', recipe});
     } catch(error){
         res.status(500).send({message: error.message || "Error Occurred"});
     }
+}
+
+//submit 
+exports.submitRecipe = async(req, res) =>{
+    res.render('submit-recipe', {title: 'Food Recipe - Submit Recipe'});
 }
