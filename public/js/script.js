@@ -1,4 +1,4 @@
-let addIngredientsBtn = documentlgetElementById('addIngredientsBtn');
+let addIngredientsBtn = document.getElementById('addIngredientsBtn');
 let ingredientList = document.querySelector('.ingredientList');
 let ingredientDiv = document.querySelectorAll('.ingredientDiv')[0];
 
