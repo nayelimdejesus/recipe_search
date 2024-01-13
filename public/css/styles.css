@@ -6,6 +6,9 @@ body{
 a{
     color: white;
 }
+ul{
+    color:black;
+}
 .mainImg{
     border-radius: 10px;
 }
